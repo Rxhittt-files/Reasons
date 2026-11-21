@@ -1,0 +1,248 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff7f8, #fbe5ec, #fff0f3);
+    font-family: Georgia, serif;
+    color: #503640;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.top-text {
+    letter-spacing: 4px;
+    font-size: 12px;
+    color: #b77b91;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 65px;
+    font-weight: normal;
+    line-height: 1.2;
+    color: #583b47;
+}
+
+h1 span {
+    font-style: italic;
+    color: #c77b98;
+}
+
+.subtitle {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    color: #997582;
+    font-size: 15px;
+}
+
+.jar-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.jar {
+    width: 170px;
+    height: 220px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.4s;
+    animation: float 3s ease-in-out infinite;
+}
+
+.jar:hover {
+    transform: scale(1.06);
+}
+
+.jar-lid {
+    width: 115px;
+    height: 25px;
+    background: #d9a5b6;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 27px;
+    border: 2px solid #c68ca1;
+}
+
+.jar-body {
+    width: 160px;
+    height: 185px;
+    position: absolute;
+    top: 25px;
+    left: 5px;
+    background: rgba(255, 255, 255, 0.65);
+    border: 3px solid #e4b9c8;
+    border-radius: 35px 35px 45px 45px;
+    box-shadow: 0 15px 35px rgba(194, 125, 151, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+}
+
+.jar-heart {
+    font-size: 65px;
+    color: #d77c9e;
+    animation: heartbeat 1.5s infinite;
+}
+
+.jar-body p {
+    font-size: 20px;
+    color: #9f617a;
+}
+
+.jar-small {
+    font-style: italic;
+    font-size: 14px !important;
+}
+
+.instruction {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #b17b8e;
+    margin-top: 15px;
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px;
+    background: #c77b98;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(199, 123, 152, 0.25);
+}
+
+button:hover {
+    background: #ae6381;
+    transform: scale(1.05);
+}
+
+.note {
+    max-width: 450px;
+    width: 90%;
+    margin: 30px auto 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid #f0d3df;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(193, 126, 149, 0.12);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.5s;
+    display: none;
+}
+
+.note.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.note-label {
+    color: #c77b98;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.note h2 {
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 1.5;
+    color: #634552;
+}
+
+.counter {
+    margin-top: 25px;
+    color: #b17b8e;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+}
+
+footer {
+    margin-top: 60px;
+    font-size: 13px;
+    color: #c18a9e;
+}
+
+.heart {
+    position: fixed;
+    color: #e6a2b8;
+    opacity: 0.45;
+    pointer-events: none;
+    animation: fall 8s linear infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 40px 15px;
+    }
+
+    h1 {
+        font-size: 43px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .jar {
+        transform: scale(0.9);
+    }
+
+    .note h2 {
+        font-size: 22px;
+    }
+}
